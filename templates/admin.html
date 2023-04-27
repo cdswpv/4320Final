@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <div class="formbox">
+        <h2>Administrator Login</h2>
+        <hr>
+        {% if seatList %}
+            <h4>Printing Seating Chart</h4>
+            <table>
+                {% for seat in seatList %}
+                    <tr>
+                        <td>
+                            {{seat}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <h4>Total Sales: ${{totalSales}}</h4>
+        {% endif %}
+        <form method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username">
+            <label for="username">Password:</label><br>
+            <input type="password" id="password" name="password">
+            <button type="submit"></button>
+        </form>
+    </div>
+
+{% endblock %}

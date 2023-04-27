@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="formbox">
+        <h2>Reserve Your Seat</h2>
+        <hr>
+        {% if ticketConfirmation %}
+            <p>
+                Congratulations {{ticketConfirmation[0]}}! Row: {{ticketConfirmation[1]}}, Seat: {{ticketConfirmation[2]}} is now reserved for you. Enjoy your trip! <br>
+                Your eticket number is: {{ticketConfirmation[3]}}
+            </p>
+        {% endif %}
+        <h3>Seating Chart</h3>
+        <h4>X = Reserved Seat : O = Available Seat</h4>
+        <table>
+            {% for seat in seatList %}
+                <tr>
+                    <td>
+                        {{seat}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>        
+        <form method="post">
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname">
+
+            <label for="row">Choose a Row:</label>
+            <select id="row" name="row">
+                <option value="">Choose a Row</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+            <label for="seat">Choose a Seat:</label>
+            <select id="seat" name="seat">
+                <option value="">Choose a Seat</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+
+            <button type="submit"></button>            
+        </form>
+    </div>
+
+{% endblock %}

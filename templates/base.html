@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %} Bus Seat Reservations {% endblock %}</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('admin') }}">Admin</a>
+            <a href="{{ url_for('reserve') }}">Reservations</a>
+        </nav>
+        <hr>
+        {% for message in get_flashed_messages() %}
+            <div>{{ message }}</div>
+        {% endfor %}
+
+        {% block content %} {% endblock %}
+    </body>
+</html>

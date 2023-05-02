@@ -7,7 +7,7 @@
         <h2>Administrator Login</h2>
         <hr>
         {% if seatList %}
-            <h4>Printing Seating Chart</h4>
+            <h4>Printing Seating Chart...</h4>
             <table>
                 {% for seat in seatList %}
                     <tr>
@@ -22,9 +22,11 @@
         <form method="post">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username">
+            <br>
             <label for="username">Password:</label><br>
             <input type="password" id="password" name="password">
-            <button type="submit"></button>
+            <br>
+            <button type="submit">Submit</button>
         </form>
     </div>
 

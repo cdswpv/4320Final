@@ -75,4 +75,9 @@ p{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color:rgb(77, 67, 57)
 }
-
+.error {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: red;
+    position: fixed;
+    font-size: 18px;
+  }

@@ -15,10 +15,12 @@
             <a href="{{ url_for('reserve') }}">Reservations</a>
         </nav>
         <hr>
-        {% for message in get_flashed_messages() %}
-            <div>{{ message }}</div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="{{ category }}">{{ message }}</div>
         {% endfor %}
-
+        {% endwith %}
         {% block content %} {% endblock %}
+
     </body>
 </html>

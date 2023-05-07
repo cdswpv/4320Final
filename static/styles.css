@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(206, 194, 170);
+}
+
+nav {
+    background-color: rgb(133, 118, 102);
+    position: fixed;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  nav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.formbox {
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 60px !important;
+    text-align: center;
+    color: rgb(255, 254, 254);
+    font-size: 24px;
+}
+
+

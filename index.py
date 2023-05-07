@@ -11,7 +11,7 @@ def index():
     if request.method == 'POST':
         menuSelect = request.form['menu']
         if menuSelect == '':
-            flash("Select a redirect option")
+            flash("Select a redirect option", "error")
         elif menuSelect == '1':
             return redirect(url_for('admin'))
         else:
@@ -42,7 +42,7 @@ def admin():
 
         passFile.close()
         if badInput:
-            flash('Invalid username/password combination')
+            flash('Invalid username/password combination', "error")
             return render_template('admin.html')
         else:                   
             return render_template('admin.html', seatList = seatList, totalSales = sales)
@@ -61,15 +61,15 @@ def reserve():
 
         
         if fname == "":
-            flash("Enter First Name")
+            flash("Enter First Name", "error")
         elif lname == "":
-            flash("Enter Last Name")
+            flash("Enter Last Name", "error")
         elif row == "":
-            flash("Choose a Row")
+            flash("Choose a Row", "error")
         elif seat == "":
-            flash("Choose a Seat")
+            flash("Choose a Seat", "error")
         elif checkInput(row, seat):
-            flash("That seat has already been chosen")
+            flash("That seat has already been chosen", "error")
         else:
             row = int(row)
             seat = int(seat)

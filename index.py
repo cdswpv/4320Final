@@ -34,7 +34,6 @@ def admin():
         for index in passList:
             if (username == passList[count]):
                 if (password == passList[count+1]):
-                    seatList = getMap()
                     badInput = False
                     passFile.close()
                     break
@@ -45,7 +44,7 @@ def admin():
             flash('Invalid username/password combination', "error")
             return render_template('admin.html')
         else:                   
-            return render_template('admin.html', seatList = seatList, totalSales = sales)
+            return render_template('admin.html', seatList = getMap(), totalSales = sales)
     return render_template('admin.html')
     
     
@@ -74,7 +73,7 @@ def reserve():
             row = int(row)
             seat = int(seat)
             ticketConfirmation = [fname, row, seat, reserveSeat(fname, row, seat)]
-            return render_template('reservations.html', seatList = seatList, ticketConfirmation = ticketConfirmation)
+            return render_template('reservations.html', seatList = getMap(), ticketConfirmation = ticketConfirmation)
 
         
     return render_template('reservations.html', seatList = seatList)
@@ -115,7 +114,7 @@ def getMap():
     holdNum = []
 
     for index in range(len(readMap)):
-        if (len(readMap[index]) < 2):
+        if (len(readMap[index]) < 3):
             holdNum.append(readMap[index])
 
     while("" in holdNum): #removes the extra blank string
@@ -149,7 +148,7 @@ def getSales(holdNum):
     return sales
 
 def getCost():
-    costMatrix = [[100, 75, 50, 100] for row in range(10)]
+    costMatrix = [[100, 75, 50, 100] for row in range(12)]
     return costMatrix
 
 app.run(host='0.0.0.0')
